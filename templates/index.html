@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LexiLoom | English Dictionary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><body>
+<div class="layout">
+<aside class="sidebar">
+<a class="brand" href="#" data-page="discover"><span class="logo">L</span><span>lexi<span class="accent">loom</span><small>WORD EXPLORER</small></span></a>
+<p class="nav-label">WORKSPACE</p>
+<button class="nav active" data-page="discover">⌂ <span>Discover</span></button>
+<button class="nav" data-page="saved">♡ <span>My collection</span><b id="savedCount">0</b></button>
+<button class="nav" data-page="history">◷ <span>Search history</span></button>
+<div class="side-note"><div class="star">✦</div><h3>A word a day</h3><p>Little discoveries make a big difference.</p><button id="dailyBtn">Explore today's word ↗</button></div>
+<div class="side-footer">● Dictionary service ready</div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="crumb">Workspace <span>/</span> <b id="crumbName">Discover</b></div><div id="todayDate"></div></header>
+<section class="page active" id="discover">
+<div class="hero"><div class="hero-content"><span class="eyebrow">✦ YOUR PERSONAL WORD SPACE</span>
+<h1>Find the right<br><em>words.</em> Feel the difference.</h1>
+<p>Explore meanings, discover new vocabulary, and give every word a voice.</p>
+<form id="searchForm" class="search">
+<span class="search-icon">⌕</span><input id="searchInput" placeholder="Search any English word..." autocomplete="off">
+<button type="button" id="voiceBtn" class="mic" title="Voice search">🎙</button><button type="submit" id="searchBtn" class="search-btn">Search ↗</button>
+</form><div class="try"><span>Try:</span><button data-word="serendipity">serendipity</button><button data-word="resilient">resilient</button><button data-word="eloquent">eloquent</button></div>
+</div><div class="art"><div class="orbit"></div><div class="back">Aa</div><div class="front"><small>✦ &nbsp; ✧</small><strong>word.</strong><span>meaning · feeling · expression</span></div><label>curiosity</label></div></div>
+<div class="section-head"><div><span class="eyebrow">START EXPLORING</span><h2>Your word dashboard</h2></div><span class="live">● LIVE DICTIONARY</span></div>
+<div class="cards"><article class="stat"><div class="stat-icon lilac">♡</div><small>SAVED WORDS</small><strong id="savedStat">0</strong><p>Words in your collection</p><button data-page="saved">View collection →</button></article>
+<article class="stat"><div class="stat-icon peach">◷</div><small>RECENT SEARCHES</small><strong id="historyStat">0</strong><p>Words you've explored</p><button data-page="history">View history →</button></article>
+<article class="daily"><span class="eyebrow">✦ WORD OF THE DAY</span><span class="badge">DAILY PICK</span><h3 id="dailyTitle">Serendipity</h3><p id="dailyMeaning">The occurrence of happy or beneficial events by chance.</p><button id="dailyExplore">Explore word ↗</button></article></div>
+<div class="section-head results-head"><div><span class="eyebrow">WORD DETAILS</span><h2>Dictionary results</h2></div><span id="status">Ready when you are</span></div>
+<div id="result" class="empty"><div class="empty-aa">Aa</div><h3>Your next word is waiting.</h3><p>Search above to reveal meanings, examples, pronunciation and more.</p><div class="features"><span>✦ Clear definitions</span><span>♬ Audio pronunciation</span><span>♡ Save favourites</span></div></div>
+</section>
+<section class="page" id="saved"><div class="page-intro"><span class="eyebrow">YOUR PERSONAL LIBRARY</span><h1>My <em>collection.</em></h1><p>All the words you've saved in one place.</p></div><div id="savedList" class="word-list"></div></section>
+<section class="page" id="history"><div class="page-intro"><span class="eyebrow">LOOK BACK, LEARN MORE</span><h1>Search <em>history.</em></h1><p>Revisit words you've explored recently.</p><button class="outline" id="clearHistory">Clear history</button></div><div id="historyList" class="word-list"></div></section>
+<section class="page" id="about"><div class="page-intro"><span class="eyebrow">ABOUT THE PROJECT</span><h1>Words connect <em>worlds.</em></h1><p>LexiLoom makes English vocabulary learning simple, interactive and enjoyable.</p></div>
+<div class="about-grid"><article><b>⌕</b><h3>Dictionary API</h3><p>Definitions, examples, parts of speech and pronunciation data from a public API.</p></article><article><b>🎙</b><h3>Voice search</h3><p>Search by speaking in browsers that support speech recognition.</p></article><article><b>♡</b><h3>Personal collection</h3><p>Save favourite words and keep recent searches in your browser.</p></article><article><b>♬</b><h3>Listen and learn</h3><p>Listen to available audio or use built-in text-to-speech.</p></article></div>
+<div class="credit"><span class="logo">L</span><div><b>LexiLoom Dictionary</b><p>HTML · CSS · JavaScript · Python Flask · Dictionary API</p></div></div></section>
+<footer>© 2026 LexiLoom Dictionary <span>Made for curious minds ✦</span></footer>
+</main></div><div id="toast" class="toast"></div>
+<script src="{{ url_for('static', filename='script.js') }}"></script></body></html>
